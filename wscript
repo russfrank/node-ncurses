@@ -22,7 +22,7 @@ def configure(conf):
 
   # configure ncurses
   print "Configuring ncurses library ..."
-  cmd = "cd deps/ncurses && sh configure --without-debug --without-tests --without-progs --without-ada --without-manpages --enable-widec --enable-ext-colors"
+  cmd = "cd deps/ncurses && sh configure --without-debug --without-tests --without-progs --without-ada --without-manpages --enable-widec --enable-ext-colors --with-terminfo-dirs=/usr/share/terminfo"
   if os.system(cmd) != 0:
     conf.fatal("Configuring ncurses failed.")
   else:
